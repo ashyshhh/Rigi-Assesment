@@ -1,38 +1,245 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: flex-start;
+}
+.select-video-message {
+  font-size: 20px;
+  /* margin-bottom: 20px; */
+  padding: 20px;
+  background-color: #f5f5f5;
+  border: 2px dashed #bbb;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: #666;
+}
+
+.speed-selector-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.speed-selector {
+  padding: 4px 8px 4px 8px;
+  font-size: 13px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+   margin-left: 4px;
+}
+
+.speed-selector:hover,
+.speed-selector:focus {
+  border-color: #666;
+}
+
+.speed-selector::after {
+  content: '\25BC'; 
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+}
+
+.speed-options {
+  position: absolute;
+  top: calc(100% + 2px);
+  right: 0;
+  z-index: 1;
+  display: none;
+  width: calc(100% - 4px);
+  border: 2px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.speed-selector:hover .speed-options,
+.speed-selector:focus .speed-options {
+  display: block;
+}
+
+.speed-option {
+  padding: 8px 12px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.speed-option:hover {
+  background-color: #f0f0f0;
+}
+
+.playlist {
+  max-width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.playlist h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.playlist-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.playlist-item:hover {
+  background-color: #f9f9f9;
+}
+
+.video-preview {
+  flex: 0 0 100px;
+  margin-right: 20px;
+}
+
+.video-info {
+  flex: 1;
+}
+
+.video-title {
+  font-size: 18px;
+  color: #333;
+}
+
+.preview-video {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.selected {
+  background-color: #f0f0f0;
+}
+
+
+
+.video-player-container {
+  max-width: 800px;
+  background-color: black;
+  border-radius: 10px;
+  overflow: hidden; 
+}
+
+.video-player-container video {
+  width: 100%;
+  border-radius: 10px;
+  height: 330px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  margin-top: 100px;
+  padding: 10px;
+}
+
+
+.video-player-container.fullscreen video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #333;
+  height: 70px;
+}
+
+.control-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.seek-bar {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.time {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.speed-selector {
+  margin-right: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.volume-control {
+  display: flex;
+  align-items: center;
+}
+
+.volume-slider {
+  margin-left: 5px;
+}
+
+.playlist {
+  max-width: 200px;
+  margin: 20px;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+}
+
+.playlist h2 {
+  margin-bottom: 10px;
+}
+
+.playlist-item {
+  display: flex;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.playlist-item:hover {
+  background-color: #ddd;
+}
+
+.video-preview {
+  width: 80px;
+  margin-right: 10px;
+}
+
+.preview-video {
+  width: 100%;
+}
+
+.video-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.video-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+.playlist-video-player {
+  background-color: #000; 
 }
