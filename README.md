@@ -5,7 +5,7 @@ This is a simple video player application built using React. It allows users to 
 
 ## Installation
 To run this application locally, follow these steps:
-1. Clone the repository to your local machine: `git clone git@github.com:ashyshhh/Rigi-Assesment.git`
+1. Clone the repository to your local machine: `git clone git@github.com:ashyshhh/Rigi-Assesment.git` and take pull from the 'master' branch
 2. Navigate to the project directory: `cd file_name`
 3. Install dependencies: `npm install`
 4. Start the development server: `npm start`
